@@ -153,7 +153,7 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 700; color: var(
 .site-nav a:hover { color: var(--charcoal); }
 .nav-toggle:checked ~ .site-nav { display: block; }
 
-#services, #works, #process, #about, #contact, #copy, #top, #main {
+#services, #works, #process, #about, #notes, #contact, #copy, #top, #main {
   scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
@@ -460,6 +460,22 @@ figcaption {
   font-size: 15px;
 }
 
+
+/* About */
+.about-body { max-width: 42em; }
+.about-body p {
+  margin: 0 0 1.2em;
+  font-size: 16.5px;
+  line-height: 1.9;
+  color: var(--warm);
+}
+.about-body p:last-child { margin-bottom: 0; }
+.about-body a { color: var(--clay); text-underline-offset: 3px; }
+#notes p {
+  max-width: 36em;
+  color: var(--warm);
+}
+
 /* About / notes */
 .split-notes { display: grid; gap: 36px; }
 .split-notes p { max-width: 36em; }
@@ -706,6 +722,11 @@ figcaption { color: var(--cream); }
 }
 
 /* About / contact */
+
+.about-body p { color: var(--muted); font-size: 17px; }
+.about-body a { color: var(--gold-lt); }
+#notes p { color: var(--muted); }
+
 .split-notes p { color: var(--muted); }
 .contact p { color: var(--cream); }
 .contact a { color: var(--gold-lt); }
