@@ -175,7 +175,16 @@ h2 {
   font-weight: 700;
   text-decoration: none;
 }
-.site-nav .nav-line:hover { color: var(--navy); }
+.site-nav a.nav-line,
+.site-nav a.nav-line:hover,
+.site-nav a.nav-line:focus-visible,
+.site-nav a.nav-line:active {
+  color: var(--navy);
+  -webkit-text-fill-color: var(--navy);
+  font-weight: 700;
+  opacity: 1;
+  filter: none;
+}
 
 /* Buttons */
 .btn-line {
@@ -195,7 +204,36 @@ h2 {
   letter-spacing: 0.04em;
   box-shadow: 0 8px 22px rgba(201, 162, 74, 0.25);
 }
-.btn-line:hover { color: var(--navy); filter: brightness(1.05); }
+.btn-line,
+.contact a.btn-line,
+a.btn-line:link,
+a.btn-line:visited {
+  color: var(--navy);
+  -webkit-text-fill-color: var(--navy);
+  font-weight: 700;
+  opacity: 1;
+}
+.btn-line:hover,
+.btn-line:focus-visible,
+.btn-line:active,
+.contact a.btn-line:hover,
+.contact a.btn-line:focus-visible,
+.contact a.btn-line:active,
+a.btn-line:hover,
+a.btn-line:focus-visible,
+a.btn-line:active {
+  color: var(--navy);
+  -webkit-text-fill-color: var(--navy);
+  font-weight: 700;
+  opacity: 1;
+  filter: none;
+}
+.btn-line:focus-visible,
+.nav-line:focus-visible,
+.float-line:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
 
 /* Hero */
 .hero {
@@ -455,7 +493,7 @@ h2 {
   margin-bottom: 8px;
   overflow-wrap: break-word;
 }
-.contact a { color: var(--gold-lt); text-underline-offset: 3px; }
+.contact a:not(.btn-line) { color: var(--gold-lt); text-underline-offset: 3px; }
 
 .site-footer {
   background: #08102a;
@@ -502,7 +540,18 @@ h2 {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
   border: 1px solid #f0dca0;
 }
-.float-line:hover { color: var(--navy); }
+.float-line,
+.float-line:link,
+.float-line:visited,
+.float-line:hover,
+.float-line:focus-visible,
+.float-line:active {
+  color: var(--navy);
+  -webkit-text-fill-color: var(--navy);
+  font-weight: 700;
+  opacity: 1;
+  filter: none;
+}
 
 @media (max-width: 719px) {
   /* 右側預留給浮動按鈕，避免文字被擋住 */
