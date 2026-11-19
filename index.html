@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
   <a class="skip" href="#main">跳到主要內容</a>
@@ -302,15 +302,15 @@
           </li>
           <li>
             <strong>確認合作，支付30%預付款</strong>
-            <span>確認提案及合作條件後，支付 30% 預付款。確認預付款實際入帳且製作資料收齊後開始製作，交期依雙方約定計算。</span>
+            <span>雙方確認提案與合作條件後，支付 30% 預付款。預付款入帳且製作資料收齊後開始製作，交期自兩者皆完成之日起依約定計算。</span>
           </li>
           <li>
             <strong>提供預覽，免費修改2次</strong>
-            <span>完成後先提供加浮水印的預覽稿，依約定需求提供 2 次免費修改。因我方錯誤或不符原約定內容的修正，不計入次數。</span>
+            <span>完成後先提供加浮水印的預覽稿，依原約定需求提供 2 次免費修改。若因我方錯誤或成品不符原約定內容而需修正，不計入次數。</span>
           </li>
           <li>
             <strong>確認定稿，支付70%尾款</strong>
-            <span>確認定稿後 5 個工作天內，支付剩餘 70% 尾款。</span>
+            <span>確認定稿後 5 個工作天內（週一至週五，不含國定假日），支付剩餘 70% 尾款。</span>
           </li>
           <li>
             <strong>正式交付檔案</strong>
@@ -319,9 +319,9 @@
         </ol>
         <div class="assurance">
           <h3>安心合作保障</h3>
-          <p>若因我方原因無法完成約定工作，或經 2 次合理修改後仍明顯不符合原先確認的需求，可依合作條款終止委託並全額退還已收取的 30% 預付款。詳細修改與退款規則，於報價確認時提供。</p>
+          <p>若因我方原因無法完成約定工作，或經 2 次合理修改後仍明顯不符合原先確認的需求，可終止委託，並全額退還已收取的 30% 預付款。詳細修改與退款規則，於報價確認時提供。</p>
         </div>
-        <p class="fine">付款說明：統一使用中華郵政（郵局）帳戶收款，匯款資訊於確認合作內容及報價後提供。可使用郵局或其他銀行轉帳，客戶付款銀行或金融機構收取的轉帳手續費由客戶自行負擔；預付款及尾款均以實際入帳金額為準。</p>
+        <p class="fine pay-note">付款說明：統一使用中華郵政（郵局）帳戶收款，匯款資訊於確認合作內容及報價後提供。可使用郵局或其他銀行轉帳，客戶付款銀行或金融機構收取的轉帳手續費由客戶自行負擔；預付款及尾款均以實際入帳金額為準。</p>
         <p class="fine">需求、報價、交期與修改範圍，歡迎透過官方 LINE 文字洽詢。</p>
         <p class="price-line">報價：依需求報價。先確認內容與交期，再報固定價。</p>
         <p class="center"><a class="btn-line" href="https://line.me/R/ti/p/@670luclt" target="_blank" rel="noopener noreferrer">加 LINE 詢問</a></p>
@@ -369,6 +369,18 @@
       document.querySelectorAll('.site-nav a').forEach(function (link) {
         link.addEventListener('click', function () { toggle.checked = false; });
       });
+    })();
+    (function () {
+      var btn = document.querySelector('.float-line');
+      var sec = document.getElementById('process');
+      if (!btn || !sec) return;
+      function check() {
+        var r = sec.getBoundingClientRect();
+        btn.classList.toggle('is-hidden', r.top < window.innerHeight && r.bottom > 0);
+      }
+      window.addEventListener('scroll', check, { passive: true });
+      window.addEventListener('resize', check);
+      check();
     })();
   </script>
 </body>

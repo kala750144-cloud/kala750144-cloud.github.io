@@ -468,7 +468,8 @@ a.btn-line:active {
 .steps li:last-child { padding-bottom: 8px; }
 .steps li:last-child::after { display: none; }
 .steps strong { display: block; color: var(--gold-lt); font-weight: 700; }
-.steps span { display: block; color: var(--muted); }
+.steps span { display: block; color: var(--muted); font-size: 16px; line-height: 1.7; margin-top: 2px; }
+.fine.pay-note { max-width: 680px; text-align: left; }
 
 .assurance {
   max-width: 40em;
@@ -648,3 +649,14 @@ a.btn-line:active {
 }
 
 .nowrap { white-space: nowrap; }
+
+/* 合作流程：手機版左右各 20px，並在此區塊顯示時隱藏浮動 LINE 按鈕（區塊內已有 LINE 按鈕） */
+.float-line.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+@media (max-width: 719px) {
+  #process .wrap {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #process .steps span, #process .fine.pay-note { font-size: 16px; }
+}
