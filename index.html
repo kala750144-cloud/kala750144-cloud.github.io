@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
   <a class="skip" href="#main">跳到主要內容</a>
@@ -21,6 +21,7 @@
       <a class="brand" href="#top" aria-label="簡沛賞｜AI訓練師">
         <img class="brand-logo" src="images/logo-full-dark.svg" width="521" height="116" alt="簡沛賞｜AI訓練師">
       </a>
+      <a class="header-line" href="https://line.me/R/ti/p/@670luclt" target="_blank" rel="noopener noreferrer">加 LINE</a>
       <input type="checkbox" id="nav-toggle" class="nav-toggle">
       <label for="nav-toggle" class="nav-button" aria-label="開啟或關閉選單">
         <span></span><span></span><span></span>
@@ -361,26 +362,12 @@
     </div>
   </footer>
 
-  <a class="float-line" href="https://line.me/R/ti/p/@670luclt" target="_blank" rel="noopener noreferrer">加 LINE</a>
-
   <script>
     (function () {
       var toggle = document.getElementById('nav-toggle');
       document.querySelectorAll('.site-nav a').forEach(function (link) {
         link.addEventListener('click', function () { toggle.checked = false; });
       });
-    })();
-    (function () {
-      var btn = document.querySelector('.float-line');
-      var sec = document.getElementById('process');
-      if (!btn || !sec) return;
-      function check() {
-        var r = sec.getBoundingClientRect();
-        btn.classList.toggle('is-hidden', r.top < window.innerHeight && r.bottom > 0);
-      }
-      window.addEventListener('scroll', check, { passive: true });
-      window.addEventListener('resize', check);
-      check();
     })();
   </script>
 </body>

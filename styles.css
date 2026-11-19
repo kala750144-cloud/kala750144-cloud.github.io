@@ -555,11 +555,11 @@ a.btn-line:active {
 }
 
 @media (max-width: 719px) {
-  /* 右側預留給浮動按鈕，避免文字被擋住 */
+  /* 手機版左右留白各 20px；LINE 按鈕改放固定頁首 */
   .wrap {
-    width: calc(100% - 20px - 88px);
+    width: calc(100% - 40px);
     margin-left: 20px;
-    margin-right: 88px;
+    margin-right: 20px;
   }
   .site-header .wrap {
     width: calc(100% - 44px);
@@ -651,6 +651,7 @@ a.btn-line:active {
 .nowrap { white-space: nowrap; }
 
 /* 合作流程：手機版左右各 20px，並在此區塊顯示時隱藏浮動 LINE 按鈕（區塊內已有 LINE 按鈕） */
+.float-line { transition: opacity .2s ease, visibility .2s ease; }
 .float-line.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 @media (max-width: 719px) {
   #process .wrap {
@@ -659,4 +660,41 @@ a.btn-line:active {
     margin-right: 20px;
   }
   #process .steps span, #process .fine.pay-note { font-size: 16px; }
+  /* 作品集圖片在手機版用滿可用寬度（移除瀏覽器預設的 figure 左右 40px） */
+  #works figure { margin-left: 0; margin-right: 0; }
+}
+
+/* 手機版：頁首選單旁的小型「加 LINE」按鈕（電腦版不顯示，電腦版選單內已有） */
+.header-line { display: none; }
+@media (max-width: 719px) {
+  :root { --float-space: 0px; }
+  .float-line { display: none; }
+  .header-line {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    min-height: 34px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid #f0dca0;
+    background: linear-gradient(180deg, #e3c77a 0%, #c9a24a 100%);
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .header-line, .header-line:link, .header-line:visited, .header-line:hover,
+  .header-line:focus-visible, .header-line:active {
+    color: var(--navy);
+    -webkit-text-fill-color: var(--navy);
+    opacity: 1;
+    filter: none;
+  }
+  .header-line:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 2px; }
+  .header-inner { gap: 8px; }
+  /* 讓頁首在手機版真正固定在上方（body 的 overflow-x:hidden 會讓 sticky 失效；水平裁切仍由 html 負責） */
+  body { overflow-x: visible; }
+  /* 從選單跳到各區時，標題不被固定頁首遮住 */
+  section[id] { scroll-margin-top: calc(var(--header-h) + 14px); }
 }
